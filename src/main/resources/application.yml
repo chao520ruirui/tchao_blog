@@ -1,0 +1,37 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      url: jdbc:mysql://47.93.50.218:3306/airuiblog?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+      username: root
+      password: 123456
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+mybatis:
+  mapper-locations: classpath:Mapper/*Mapper.xml
+  type-aliases-package: com.itchao.tchao_blog.pojo
+logging:
+  level:
+    com:
+      itchao:
+        tchao_blog:
+          dao: debug
+oss:
+  endpoint: oss-cn-beijing.aliyuncs.com
+  accessKeyId: LTAI4GD16FyxsyRrvxb7W5oG
+  accessKeySecret: z2lXeNgKuJE6TLb9zjFLC8g0MMFco4
+  bucketName: chao520ruirui
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
